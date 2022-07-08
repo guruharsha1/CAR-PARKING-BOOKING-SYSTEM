@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>this is home page</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-md-8 offset-md-2">
+				
+					<div class="my-card mt-1">
+					
+					 <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+  	               	     <p class="text-center" th:text="${session.message.content}"></p>  	               	     
+  	               	     <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+		             </div>
+					
+					
+					<div class="container text-center">
+					
+				     <img class="" style="width: 80px;" src="" th:src="@{/img/signup.png}" alt="" />
+					
+					</div>
+					
+					  <h1 class="text-center">SignUp</h1>
+					  
+					  <form class="form" novalidate action="" th:action="@{/do_register}" method="post" th:object="${user}" >
+					  
+					  
+					  	 <div class="form-group">
+					  	 
+						    <label for="email_field">Name</label>
+						    
+						    <input 
+						     name="name"
+						      type="email"
+						      class="form-control"
+						      id="email_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter here"
+						      required
+						      
+						    
+						       />
+						    
+						    
+  						</div>
+				
+  						<!-- UserName-->
+  						
+  						
+					  	 <div class="form-group">
+					  	 
+						    <label for="name_field">Username</label>
+						    
+						    <input 
+						      name="username"
+						      type="text"
+						      class="form-control "
+						      
+						      id="username_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter Your UserName"
+						      required
+						     
+						       />
+						       
+						       
+						    
+						    
+  						</div>
+  						
+  						
+  						
+  						
+  						
+  						<!--address-->
+  						
+					  	 <div class="form-group">
+					  	 
+						    <label for="name_field">Address</label>
+						    
+						    <input 
+						      name="address"
+						      type="text"
+						      class="form-control "
+						      
+						      id="Address" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter your address"
+						      required
+						    
+						       />
+						       
+						       
+						       
+						    
+						    
+  						</div>
+					  
+					  	<!-- email field  -->
+					  
+					  
+					  	 <div class="form-group"
+					  	 th:with="n=${str}">
+					  	 
+						    <label for="email_field">Your Email</label>
+						    
+						    <input 
+						     name="email"
+						      type="email"
+						      class="form-control"
+						      id="email_field" 
+						      aria-describedby="emailHelp"
+						      th:text="${str}"
+						      placeholder="Enter here"
+						      required
+						      
+						     
+						    
+						       />
+						    
+						    
+  						</div>
+					  	<!-- password field  -->
+					  
+					  
+					  	 <div class="form-group">
+					  	 
+						    <label for="password_field">Your Password</label>
+						    
+						    <input 
+						    
+						      name="password"
+						      type="password"
+						      class="form-control"
+						      id="password_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter here"
+						      required
+						      
+						       />
+						    
+						    
+  						</div>
+  						
+					  	 <div class="form-group">
+					  	 
+						    <label for="name_field">VehicleNumber</label>
+						    
+						    <input 
+						    
+						      name="vehiclenumber"
+						      type="text"
+						      class="form-control"
+						      id="VehicleNumber" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter Your VehicleNumber"
+						      required
+						  
+						       />
+						    
+						    
+  						</div>
+  						<!-- user about field -->
+  							  <!-- phonenumber  -->
+  						
+					  	 <div class="form-group">
+					  	 
+						    <label for="name_field">Mobile Number</label>
+						    
+						    <input 
+						      name="mobilenumber"
+						      type="text"
+						      class="form-control "
+						
+						      id="MoblileNumber" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter Your MobileNumber"
+						      required
+						      pattern="[6-9] {1}[0-9]{9}"
+						  
+						       />
+						       
+						       
+						        
+						    
+						    
+  						</div>
+  						
+  						
+  						<!-- terms and condition agreement  -->
+  						
+  						
+  						<div class="form-group form-check">
+  						
+  								<input type="checkbox" 
+  								name="agreement"
+  								class="form-check-input"
+  								id="agreement"
+  								
+  								/>	
+  								
+  								<label for="agreement">Accept terms and conditions</label>
+  									
+  									
+  						
+  						</div>
+  						
+  						<div class="container text-center">
+  						
+  					<!--th:href="@{/verification}?:"     -->
+  					
+  					
+  						<button type="submit" class="btn bg-primary  text-white">
+  							 <a>SUBMIT</a>
+  						</button>
+  						<button type="reset" class="btn btn-warning ">
+  							Reset
+  						</button>
+  						
+  						
+  						</div>
+					  
+					  
+					  
+					  </form>
+				
+					
+					</div>
+				
+				</div>
+			
+			
+			</div>
+		
+		</div>
+	
+	</section>
+</body>
+</html>

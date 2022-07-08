@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal1/base1::layout(~{::section})">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  
+  <body>
+  
+<section>
+<div class="card">
+   <h1> User Details <h1>
+    <h4 > Time of Entry : </h4>
+   <h4 th:text="${intime}"></h4>
+    <h4 class="he"> No of parking hours : <h4>
+    <h4 th:text="${hour}"></h4 >
+    <h4> Your car model : <h4>
+    <h4 th:text="${car_model}"></h4 >
+    <h4> Your preffered slot is : <h4>
+    <h4 th:text="${preference}"></h4 >
+  
+  <h4> Parking slot number : <h4>
+    <h4 th:text="${index}"></h4 >
+  
+    <h4> Total cost to be paid : </h4>
+    <h4 th:text="${amount}"></h4 >
+    <form th:action="@{/user/paying}">
+  <button class="btn btn-md btn-primary mt-3 md-3" >Pay now</button>
+  </form>
+  
+ 
+</div>
+ </section>
+ 
+
+    
+  </body>
+</html>

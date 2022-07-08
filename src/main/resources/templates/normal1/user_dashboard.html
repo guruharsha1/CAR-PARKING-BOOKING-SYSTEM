@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal1/base1::layout(~{::section})">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+
+ 
+<title th:text="${title}">Base html</title>
+</head>
+<body>
+<section>
+		<div class="container">
+			<div class="card">
+				<div class="card-body my-5 text-center">
+				<img alt="" src="../img/carlogo.jpg" width="200" height="200">
+				<div class="text-center">
+		
+				 <p class="welcome"> Welcome to </p>
+				 </div>
+				 <div class="text-center">
+				
+				 <p class="welcome"> Parking managing system </p>
+				 </div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+        $(document).ready(() => {
+          $(".item").removeClass("active");
+          $("#home-link").addClass("active");
+        });
+      </script>
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+	</section>
+</body>
+</html>

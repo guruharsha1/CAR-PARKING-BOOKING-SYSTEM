@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+th:replace="normal1/base1::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>this is home page</title>
+</head>
+<body>
+	<section>
+	<div class="card wallet text-center">
+<h1>Enter your Car model</h1>
+<div class="input-group mt-3 mb-3">
+						
+							<div class="input-group-prepend">
+							
+								<div class="input-group-text ">
+										
+									<i class="fas fa-car"></i>
+									
+								</div>
+								
+							
+							</div>
+						<form th:action="/user/model_car" method="post">
+							<input name="model1" required  type="text" id=""  placeholder="Enter your car model(SUV/SEDAN/HATCHBACK/OTHER)" class="form-control" />
+						</form>
+						</div>
+						<button>Submit</button>
+						</div>
+	  <script>
+        $(document).ready(() => {
+          $(".item").removeClass("active");
+          $("#car-model").addClass("active");
+        });
+      </script>
+	</section>
+</body>
+</html>

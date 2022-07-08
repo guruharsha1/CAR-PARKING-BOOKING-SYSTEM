@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal1/base1::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>this is home page</title>
+</head>
+<body>
+	<section>
+		
+		<div class="card mr-3 ml-3">
+		
+		<div class="card-body">
+		
+		<h1 class="text-center">Your Slot Details</h1>
+		
+		
+		<!-- search -->
+		
+		<div class="search-container my-3">
+
+			
+			
+		
+		</div>
+		
+		
+	
+		<div class="table-responsive">
+		<table class="table table-hover ">
+			  <thead class="thead-light ">
+			    <tr>
+			      <th scope="col">#ID</th>
+			      <th scope="col">Car Model</th>
+			      <th scope="col">Email</th>
+			      <th scope="col">Duration</th>
+			      <th scope="col">Slot</th>
+			  
+			      <th scope="col">Cost</th>
+			      
+			    </tr>
+			  </thead>
+			  <tbody>
+			  
+			  
+			    <tr th:each="c : ${contacts}">
+			    
+			      <th scope="row" th:text="${'SCMUSER'+c.cId}">1</th>
+			      
+ 
+</table>
+ 
+ 		</div>
+		
+				
+		
+		
+		</div>
+		
+		</div>
+		
+		  <script>
+        $(document).ready(() => {
+          $(".item").removeClass("active");
+          $("#slot-link").addClass("active");
+        });
+      </script>
+		
+	</section>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="layout(content)">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+	
+	
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+<title th:text="${title}">Base html</title>
+</head>
+<body>
+
+
+	<!-- navbar -->
+
+	<nav class="navbar navbar-expand-lg navbar-dark  bg-primary">
+	
+		<a class="navbar-brand" href="#">Parking Management Services</a>
+		
+		
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			
+			
+			<ul class="navbar-nav ml-auto text-uppercase">
+				
+				<li class="nav-item "><a th:href="@{/}" class="nav-link" href="#">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				
+				
+				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+				
+				
+			
+				<li class="nav-item"><a class="nav-link " href="#"
+				
+					th:href="@{/signin}"
+					tabindex="-1" aria-disabled="true">Login</a></li>
+					
+					
+					
+				<li class="nav-item"><a class="nav-link " th:href="@{/verification}" href="#"
+					tabindex="-1" aria-disabled="true">Signup</a></li>
+					
+					
+					
+			</ul>
+			
+			
+			
+		</div>
+	</nav>
+	<!-- 
+	END navbar -->
+
+<section>
+		 <div id="login">
+       
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                       
+                        <form id="login-form" class="form" th:action="@{/dologin}" action="#" method="post">
+                        
+                            <h3 class="text-center text-info">Login</h3>
+                            
+                            <div th:if="${param.error}" class="alert alert-danger">
+                            	Invalid username and password
+                            </div>
+                            
+                             <div th:if="${param.logout}" class="alert alert-success">
+                            	You have been logged out
+                            </div>
+                            
+                             <div th:if="${param.change}" class="alert alert-success">
+                            	<p th:text="${param.change}"></p>
+                            </div>
+                            
+                            
+                            
+                            
+                            <div class="form-group">
+                                <label for="username" class="text-info">Email:</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <label for="password" class="text-info">Password:</label><br>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+                            
+                            
+                            
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            </div>
+                            
+                            <div id="register-link" class="text-right">
+                                <a href="/signup/" class="text-info">Register here</a>
+                            </div>
+                            
+                            <div class="container text-center">
+                            
+                            
+                            <a th:href="@{/forgot}" > Forgot Password ?</a>
+                            
+                            
+                            </div>
+                          
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	</section>
+	  
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+		
+		<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

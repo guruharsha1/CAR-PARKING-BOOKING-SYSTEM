@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+th:replace="normal1/base1::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>this is home page</title>
+</head>
+<body>
+	<section>
+	<div class="card wallet text-center">
+<h1>Wallet</h1>
+	<div class="wallett">
+ <img alt="" src="../img/wallet.png" width="100" height="100">
+	</div>
+	<p class="amm">Amount</p>
+	<p class="rs" th:text="${money_to_body}"></p>
+
+	<div class="justify-content-center">
+
+</div>
+<div class="justify-content-center">
+	<input id="payment_field" type="text" class="form-control my-2" placeholder="Enter amount here" />
+<button class="btn btn-primary" id="rzp-button1">Add money</button>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_GN0WVPMmbKDcsB", // Enter the Key ID generated from the Dashboard
+    "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Parking System",
+    "description": "Test Transaction",
+    "image": "data:image/jpeg;base64,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",
+    "order_id": "order_IUaRO3l7ErOcr2", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature)
+    },
+    "prefill": {
+        "name": "",
+        "email": "",
+        "contact": ""
+    },
+    "notes": {
+        "address": "BITS HYD"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
+</div>
+
+	</div>
+	  <script>
+        $(document).ready(() => {
+          $(".item").removeClass("active");
+          $("#walllet").addClass("active");
+        });
+      </script>
+	</section>
+</body>
+</html>
